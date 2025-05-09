@@ -1,11 +1,13 @@
 package com.ismailo.gamingDirectory.repositories;
 
+import com.ismailo.gamingDirectory.TestUtil;
 import com.ismailo.gamingDirectory.entities.GamerEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 
+import static com.ismailo.gamingDirectory.TestUtil.getGamerEntityB;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
@@ -26,11 +28,11 @@ public class GamerRepositoryIntegrationTest {
 
     @Test
     public void testThatYouCanAddGamersAndFindThem() {
-        GamerEntity gamerEntityA = getGamerEntityA();
+        GamerEntity gamerEntityA = TestUtil.getGamerEntityA();
         gamerRepository.save(gamerEntityA);
-        GamerEntity gamerEntityB = getGamerEntityB();
+        GamerEntity gamerEntityB = TestUtil.getGamerEntityB();
         gamerRepository.save(gamerEntityB);
-        GamerEntity gamerEntityC = getGamerEntityC();
+        GamerEntity gamerEntityC = TestUtil.getGamerEntityC();
         gamerRepository.save(gamerEntityC);
 
         List<GamerEntity> result = gamerRepository.findAll();
@@ -38,15 +40,5 @@ public class GamerRepositoryIntegrationTest {
         assertThat(result.size(), is(3));
 
         assertThat(result, containsInAnyOrder(gamerEntityA, gamerEntityB, gamerEntityC));
-    }
-
-    private GamerEntity getGamerEntityA() {
-        return new GamerEntity("Denmark");
-    }
-    private GamerEntity getGamerEntityB() {
-        return new GamerEntity("Denmark");
-    }
-    private GamerEntity getGamerEntityC() {
-        return new GamerEntity("Sweden");
     }
 }

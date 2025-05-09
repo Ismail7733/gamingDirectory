@@ -33,12 +33,16 @@ public class GamerEntity {
         this.country = country;
     }
 
-    public String getCountry(String country) {
+    public String getCountry() {
         return country;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
