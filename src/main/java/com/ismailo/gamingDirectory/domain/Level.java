@@ -1,4 +1,4 @@
-package com.ismailo.gamingDirectory.entities;
+package com.ismailo.gamingDirectory.domain;
 
 public enum Level {
     Pro,

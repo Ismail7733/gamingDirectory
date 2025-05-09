@@ -1,7 +1,7 @@
 package com.ismailo.gamingDirectory;
 
-import com.ismailo.gamingDirectory.entities.GameEntity;
-import com.ismailo.gamingDirectory.entities.GamerEntity;
+import com.ismailo.gamingDirectory.domain.GameEntity;
+import com.ismailo.gamingDirectory.domain.GamerEntity;
 
 public class TestUtil {
     public static GamerEntity getGamerEntityA() {

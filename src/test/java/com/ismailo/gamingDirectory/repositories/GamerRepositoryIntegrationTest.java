@@ -1,10 +1,9 @@
 package com.ismailo.gamingDirectory.repositories;
 
 import com.ismailo.gamingDirectory.TestUtil;
-import com.ismailo.gamingDirectory.entities.GamerEntity;
+import com.ismailo.gamingDirectory.domain.GamerEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 
