@@ -31,5 +31,4 @@ public class GamerService {
                 .map(gamerEntity -> new ResponseEntity<>(gamerEntity, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-
 }

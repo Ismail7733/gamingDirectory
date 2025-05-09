@@ -69,5 +69,21 @@ public class GamerControlerIntegrationTest {
         );
     }
 
+    @Test
+    public void testThatGamerCanBeFoundAfterBeingCreated() throws Exception {
+        GamerEntity gamerEntityA = TestUtil.getGamerEntityA();
+
+        gamerService.createGamer(gamerEntityA);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.get("/gamers/1")
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.id").value(1)
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.country").value("Denmark")
+        );
+    }
+
 
 }

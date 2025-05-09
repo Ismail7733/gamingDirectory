@@ -27,6 +27,4 @@ public class GamerController {
     public ResponseEntity<GamerEntity> findGamer(@PathVariable("id") long id) {
         return gamerService.findGamer(id);
     }
-
-
 }
