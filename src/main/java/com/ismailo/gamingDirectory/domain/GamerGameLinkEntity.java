@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "gamer_game_links")
-public class GamerGameLink {
+public class GamerGameLinkEntity {
 
     @EmbeddedId
     private GamerGameId gamerGameId;
@@ -15,10 +15,10 @@ public class GamerGameLink {
     @NotNull
     private Level level;
 
-    public GamerGameLink() {
+    public GamerGameLinkEntity() {
     }
 
-    public GamerGameLink(GamerGameId gamerGameId, Level level) {
+    public GamerGameLinkEntity(GamerGameId gamerGameId, Level level) {
         this.gamerGameId = gamerGameId;
         this.level = level;
     }

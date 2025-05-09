@@ -1,7 +1,7 @@
 package com.ismailo.gamingDirectory.domain;
 
 public enum Level {
-    Pro,
-    Invisible,
+    PRO,
+    INVISIBLE,
     N00B;
 }

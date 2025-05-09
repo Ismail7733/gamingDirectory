@@ -1,12 +1,16 @@
 package com.ismailo.gamingDirectory.services;
 
-import com.ismailo.gamingDirectory.domain.GamerGameLink;
+import com.ismailo.gamingDirectory.domain.GamerEntity;
+import com.ismailo.gamingDirectory.domain.GamerGameLinkEntity;
+import com.ismailo.gamingDirectory.domain.Level;
 import com.ismailo.gamingDirectory.repositories.GameRepository;
 import com.ismailo.gamingDirectory.repositories.GamerGameLinkRepository;
 import com.ismailo.gamingDirectory.repositories.GamerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class GamerGameLinkService {
@@ -21,7 +25,7 @@ public class GamerGameLinkService {
         this.gameRepository = gameRepository;
     }
 
-    public ResponseEntity<?> createGamerGameLink(GamerGameLink gamerGameLink) {
+    public ResponseEntity<?> createGamerGameLink(GamerGameLinkEntity gamerGameLink) {
         Long gamerId = gamerGameLink.getGamerGameId().getGamerId();
         Long gameId = gamerGameLink.getGamerGameId().getGameId();
 
@@ -37,7 +41,12 @@ public class GamerGameLinkService {
                     .body("Game with ID " + gameId + " does not exist.");
         }
 
-        GamerGameLink saved = gamerGameLinkRepository.save(gamerGameLink);
+        GamerGameLinkEntity saved = gamerGameLinkRepository.save(gamerGameLink);
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
+    }
+
+    public ResponseEntity<List<GamerEntity>> findMatchingGamers(String country, Long gameId, Level level) {
+        List<GamerEntity> gamers = gamerGameLinkRepository.findGamerIdsByCountryGameIdAndLevel(country, gameId, level);
+        return new ResponseEntity<>(gamers, HttpStatus.OK);
     }
 }
