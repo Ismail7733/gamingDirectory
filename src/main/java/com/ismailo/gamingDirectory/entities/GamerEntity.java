@@ -1,0 +1,56 @@
+package com.ismailo.gamingDirectory.entities;
+
+import jakarta.persistence.*;
+
+import java.util.Objects;
+
+/*
+    This class represents the gamers table.
+    Each gamer has a unique id and a country String value
+ */
+@Entity
+@Table(name = "gamers")
+public class GamerEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String country;
+
+    /**
+     * Empty constructor since it is required by JPA
+     */
+    public GamerEntity() {
+
+    }
+
+    public GamerEntity(String country) {
+        this.country = country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCountry(String country) {
+        return country;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GamerEntity)) return false;
+        GamerEntity that = (GamerEntity) o;
+        return Objects.equals(country, that.country);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(country);
+    }
+}
