@@ -2,10 +2,8 @@ package com.ismailo.gamingDirectory.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ismailo.gamingDirectory.TestUtil;
-import com.ismailo.gamingDirectory.domain.GameEntity;
-import com.ismailo.gamingDirectory.domain.GamerEntity;
+import com.ismailo.gamingDirectory.entities.GameEntity;
 import com.ismailo.gamingDirectory.services.GameService;
-import com.ismailo.gamingDirectory.services.GamerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

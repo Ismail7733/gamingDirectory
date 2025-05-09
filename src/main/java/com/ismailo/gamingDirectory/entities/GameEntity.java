@@ -1,7 +1,6 @@
-package com.ismailo.gamingDirectory.domain;
+package com.ismailo.gamingDirectory.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "games")

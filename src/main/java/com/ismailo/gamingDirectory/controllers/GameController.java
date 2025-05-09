@@ -1,9 +1,7 @@
 package com.ismailo.gamingDirectory.controllers;
 
-import com.ismailo.gamingDirectory.domain.GameEntity;
-import com.ismailo.gamingDirectory.domain.GamerEntity;
+import com.ismailo.gamingDirectory.entities.GameEntity;
 import com.ismailo.gamingDirectory.services.GameService;
-import com.ismailo.gamingDirectory.services.GamerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
