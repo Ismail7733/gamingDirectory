@@ -1,4 +1,4 @@
-package com.ismailo.gamingDirectory.domain;
+package com.ismailo.gamingDirectory.entities;
 
 import jakarta.persistence.*;
 

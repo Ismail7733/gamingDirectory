@@ -1,5 +1,6 @@
-package com.ismailo.gamingDirectory.domain;
+package com.ismailo.gamingDirectory.entities;
 
+import com.ismailo.gamingDirectory.domain.Level;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 

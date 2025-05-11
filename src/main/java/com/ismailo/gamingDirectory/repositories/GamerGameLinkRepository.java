@@ -1,15 +1,17 @@
 package com.ismailo.gamingDirectory.repositories;
 
-import com.ismailo.gamingDirectory.domain.GamerEntity;
-import com.ismailo.gamingDirectory.domain.GamerGameLinkEntity;
-import com.ismailo.gamingDirectory.domain.GamerGameId;
+import com.ismailo.gamingDirectory.entities.GamerEntity;
+import com.ismailo.gamingDirectory.entities.GamerGameLinkEntity;
+import com.ismailo.gamingDirectory.entities.GamerGameId;
 import com.ismailo.gamingDirectory.domain.Level;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface GamerGameLinkRepository extends JpaRepository<GamerGameLinkEntity, GamerGameId> {
 
     @Query("""

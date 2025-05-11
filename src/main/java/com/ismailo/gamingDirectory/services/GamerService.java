@@ -1,6 +1,6 @@
 package com.ismailo.gamingDirectory.services;
 
-import com.ismailo.gamingDirectory.domain.GamerEntity;
+import com.ismailo.gamingDirectory.entities.GamerEntity;
 import com.ismailo.gamingDirectory.repositories.GamerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

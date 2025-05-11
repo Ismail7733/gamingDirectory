@@ -1,6 +1,6 @@
 package com.ismailo.gamingDirectory.repositories;
 
-import com.ismailo.gamingDirectory.domain.GamerEntity;
+import com.ismailo.gamingDirectory.entities.GamerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

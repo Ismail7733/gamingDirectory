@@ -1,7 +1,7 @@
 package com.ismailo.gamingDirectory.services;
 
-import com.ismailo.gamingDirectory.domain.GamerEntity;
-import com.ismailo.gamingDirectory.domain.GamerGameLinkEntity;
+import com.ismailo.gamingDirectory.entities.GamerEntity;
+import com.ismailo.gamingDirectory.entities.GamerGameLinkEntity;
 import com.ismailo.gamingDirectory.domain.Level;
 import com.ismailo.gamingDirectory.repositories.GameRepository;
 import com.ismailo.gamingDirectory.repositories.GamerGameLinkRepository;
