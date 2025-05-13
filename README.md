@@ -57,5 +57,7 @@ You may notice the following line in my GamerRepositoryIntegrationTest class: @E
 This was necessary due to a strange issue: the test passed when run individually, but failed during a full test suite run with the error that the gamer entity could not be found.
 This suggests that Spring Boot was not consistently detecting entities in some test contexts. As a temporary solution, I used this notation. In a real project, this should be investigated further
 
-Also, in a real environment, you would not want to expose your entity structure in your service layer. In this case, it would make sense to use DTOs
+Also, in a real environment, you would not want to expose your entity structure in your service layer. In this case, it would make sense to use DTOs.
+
++ Encountered issues implementing cascade delete
 
