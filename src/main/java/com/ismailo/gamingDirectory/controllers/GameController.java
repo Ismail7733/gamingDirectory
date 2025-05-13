@@ -4,6 +4,7 @@ import com.ismailo.gamingDirectory.entities.GameEntity;
 import com.ismailo.gamingDirectory.services.GameService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,8 @@ public class GameController {
 
     @PostMapping(path = "/games")
     @Operation(summary = "Create a new game", description = "Adds a new game to the system")
-    public ResponseEntity<GameEntity> createGame(@RequestBody GameEntity gameEntity) {
+    public ResponseEntity<GameEntity> createGame(@Valid @RequestBody GameEntity gameEntity) {
+        System.out.println("Received: " + gameEntity.getName());
         return gameService.createGame(gameEntity);
     }
 

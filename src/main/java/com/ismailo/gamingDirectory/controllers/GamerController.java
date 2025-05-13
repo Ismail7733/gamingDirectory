@@ -4,6 +4,7 @@ import com.ismailo.gamingDirectory.entities.GamerEntity;
 import com.ismailo.gamingDirectory.services.GamerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class GamerController {
 
     @PostMapping(path = "/gamers")
     @Operation(summary = "Create a new gamer", description = "Adds a new gamer to the system")
-    public ResponseEntity<GamerEntity> createGamer(@RequestBody GamerEntity gamerEntity) {
+    public ResponseEntity<GamerEntity> createGamer(@Valid @RequestBody GamerEntity gamerEntity) {
         return gamerService.createGamer(gamerEntity);
     }
 

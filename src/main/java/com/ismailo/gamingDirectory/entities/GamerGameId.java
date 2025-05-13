@@ -1,12 +1,15 @@
 package com.ismailo.gamingDirectory.entities;
 
 import jakarta.persistence.Embeddable;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
 public class GamerGameId implements Serializable {
+
 
     private Long gameId;
 

@@ -1,6 +1,8 @@
 package com.ismailo.gamingDirectory.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Objects;
 
@@ -16,6 +18,7 @@ public class GamerEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Country is required")
     private String country;
 
     /**

@@ -3,6 +3,7 @@ package com.ismailo.gamingDirectory.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ismailo.gamingDirectory.TestUtil;
 import com.ismailo.gamingDirectory.entities.GameEntity;
+import com.ismailo.gamingDirectory.entities.GamerEntity;
 import com.ismailo.gamingDirectory.services.GameService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,6 +68,19 @@ public class GameControllerIntegrationTest {
     }
 
     @Test
+    public void testThatinvalidGameFails() throws Exception {
+        GamerEntity invalidGame = TestUtil.getGamerEntityB();
+
+        String invalidGameJson = objectMapper.writeValueAsString(invalidGame);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.post("/games")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(invalidGameJson)
+        ).andExpect(MockMvcResultMatchers.status().isBadRequest());
+    }
+
+    @Test
     public void testThatGamerCanBeFoundAfterBeingCreated() throws Exception {
         GameEntity gameEntityA = TestUtil.getGameEntityA();
 
@@ -81,4 +95,6 @@ public class GameControllerIntegrationTest {
                 MockMvcResultMatchers.jsonPath("$.name").value("Overwatch")
         );
     }
+
+
 }

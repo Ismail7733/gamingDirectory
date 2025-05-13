@@ -2,6 +2,7 @@ package com.ismailo.gamingDirectory.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ismailo.gamingDirectory.TestUtil;
+import com.ismailo.gamingDirectory.entities.GameEntity;
 import com.ismailo.gamingDirectory.entities.GamerEntity;
 import com.ismailo.gamingDirectory.services.GamerService;
 import org.junit.jupiter.api.Test;
@@ -79,6 +80,19 @@ public class GamerControllerIntegrationTest {
         ).andExpect(
                 MockMvcResultMatchers.jsonPath("$.country").value("Denmark")
         );
+    }
+
+    @Test
+    public void testThatinvalidGamerFails() throws Exception {
+        GameEntity invalidGamer = TestUtil.getGameEntityB();
+
+        String invalidGamerJson = objectMapper.writeValueAsString(invalidGamer);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.post("/gamers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(invalidGamerJson)
+        ).andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
 
 
